@@ -26,7 +26,7 @@
         @Test
         public void queenHasValue10() {
             card = new Card(SuitType.HEARTS, RankType.QUEEN);
-            assertEquals(10, card.getValueFromEnum());
+            assertEquals(10, card.getValue());
 
         }
     }

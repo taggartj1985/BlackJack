@@ -16,7 +16,7 @@ public class Card {
             return this.rank;
         }
 
-        public int getValueFromEnum(){
+        public int getValue(){
             return this.rank.getValue();
         }
 }
