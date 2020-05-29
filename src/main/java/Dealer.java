@@ -18,5 +18,13 @@ public class Dealer {
         this.dealersCards.add(card);
     }
 
+    public int dealerTotal(){
+        int total = 0;
+        for(Card card : this.dealersCards){
+            total += card.getValue();
+        }
+        return total;
+    }
+
 
 }

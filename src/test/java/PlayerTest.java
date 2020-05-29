@@ -7,6 +7,7 @@ import static org.junit.Assert.assertEquals;
         Player player;
         String name;
         Card card;
+        Card card2;
 
 
         @Before
@@ -14,6 +15,7 @@ import static org.junit.Assert.assertEquals;
             name = "John";
             player = new Player(name);
             card = new Card(SuitType.HEARTS, RankType.ACE);
+            card2 = new Card(SuitType.HEARTS, RankType.KING);
         }
 
         @Test
@@ -37,5 +39,12 @@ import static org.junit.Assert.assertEquals;
             player.addCard(card);
             player.clearHand();
             assertEquals(0, player.getHand().size());
+        }
+
+        @Test
+        public void canCheckCardTotal(){
+            player.addCard(card);
+            player.addCard(card2);
+            assertEquals(21, player.playerTotal());
         }
     }

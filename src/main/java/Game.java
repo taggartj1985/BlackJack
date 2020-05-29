@@ -21,10 +21,13 @@ public class Game{
     }
 
     public void setUp(Deck deck) {
+        deck.shuffleDeck();
         for (Player player : this.players) {
             player.addCard(deck.dealCard());
             player.addCard(deck.dealCard());
         }
+        dealer.addCardToDealer(deck.dealCard());
+        dealer.addCardToDealer(deck.dealCard());
     }
 
     public void setUpForDealer(Deck deck){
@@ -32,6 +35,19 @@ public class Game{
         dealer.addCardToDealer(deck.dealCard());
     }
 
-//    public void
+    public String checkForWinner(Player player){
+        String result = "test";
+        if((player.playerTotal() < dealer.dealerTotal()) &&
+                dealer.dealerTotal() <= 21 )
+            result = "Player Loses";
+        else if ((player.playerTotal() == dealer.dealerTotal()) &&
+                dealer.dealerTotal() <= 21 )
+            result = "Draw";
+        else
+            result = "Player Wins";
+
+        return result;
+
+    }
 
 }
