@@ -70,4 +70,20 @@ public class GameTest {
         assertEquals("Player Loses", game.checkForWinner(player));
     }
 
+    @Test
+    public void canPlayerGoBust(){
+        player.addCard(card2);
+        player.addCard(card2);
+        player.addCard(card2);
+        assertEquals(true, game.playerBust(player));
+    }
+
+    @Test
+    public void canDealerGoBust(){
+        dealer.addCardToDealer(card2);
+        dealer.addCardToDealer(card2);
+        dealer.addCardToDealer(card2);
+        assertEquals(true, game.dealerBust());
+    }
+
 }

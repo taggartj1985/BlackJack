@@ -50,4 +50,20 @@ public class Game{
 
     }
 
+    public boolean playerBust(Player player){
+        boolean result = false;
+        if((player.playerTotal() > 21))
+            result = true;
+
+            return result;
+    }
+
+    public boolean dealerBust(){
+        boolean result = false;
+        if((dealer.dealerTotal() > 21))
+            result = true;
+
+        return result;
+    }
+
 }
